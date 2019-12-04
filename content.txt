@@ -1,0 +1,52 @@
+mrst-NonLinSolvers consists of the following folders:
+
+* Richards only
+* Richards and Transport
+
+The Richards only folder contains: 
+        * equationsRichards.m: where the Richards equation is defined on the base of the oil/water equations already available in MRST
+        
+        * equationsRichardsLScheme.m: linearized version of the Richards equation, obtained thanks to the L-scheme
+        
+        * Example_Richards.m: two different examples are here investigated, unsaturated and variably saturated domains. 
+                              Different linearization schemes are taken into account
+        
+        * FixedPointSimulateScheduleAD.m: function used to solve problems using automatic differentiations. Here we include the analytical 
+                              external sources which drive the flow
+        
+        * getConductivity.m: conductivity K is here defined
+        
+        * getTheta.m: water content theta is here defined
+        
+        * LinearSolverAD.m: the original LinearSolverAD.m has been modified to store the residual used for Anderson acceleration
+        
+        * PlotsIterationsResiduals.m: used to plot the residual and the itereations required by the different linearization schemes
+        
+        * RichardsEquationsFixedPointScheme.m: model for Richards equation, here we find the getEquations functions, one for each linearization scheme investigated.
+        
+        
+The Richards and transport folder contains the same set of function, modified to study the couple problem, precisely:
+        * equationsRichardsTransport.m: where the Richards and transport equations are defined on the base of the oil/water/polymer equations already available in MRST
+        
+        * equationsRichardsTransportLScheme.m: linearized version of the Richards and transport equations, obtained thanks to the L-scheme
+        
+        * Example_RichardsTransport.m: two different examples are here investigated, unsaturated and variably saturated domains. 
+                              Different linearization schemes are taken into account
+        
+        * FixedPointSimulateScheduleAD.m: function used to solve problems using automatic differentiations. Here we include the analytical 
+                              external sources which drive the flow
+        
+        * getConductivity.m: conductivity K is here defined
+        
+        * getThetaCoupled.m: water content theta is here defined, double dependency from both pressure and concentration of the external component
+        
+        * LinearSolverAD.m: the original LinearSolverAD.m has been modified to store the residual used for Anderson acceleration
+        
+        * NonLinearSolverAnderson.m: function used when implementing the Anderson acceleration
+        
+        * PhysicalTest.m: contains a further numerical example. The analytical external sources are set to zero and the Newumann conditions
+                          drive the flow
+                          
+        * RichardsEquationsFixedPointScheme.m: model for Richards equation, here we find the getEquations functions, one for each linearization scheme investigated.
+
+
